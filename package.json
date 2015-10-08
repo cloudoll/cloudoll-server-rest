@@ -1,0 +1,15 @@
+{
+  "name": "cloudeer",
+  "version": "0.0.1",
+  "description": "microservices management tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cluster",
+    "microservice"
+  ],
+  "author": "Xie Zhengwei <iam@xiezhengwei.com>",
+  "license": "ISC"
+}
