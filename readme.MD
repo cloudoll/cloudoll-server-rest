@@ -16,14 +16,10 @@
 
 微服务启动后，请访问这个URL, 需要发起心跳访问，建议心跳间隔不要超过 9 秒。
 
-/register
-
+GET /register
 host: 主机地址
-
 name: 服务名称
-
 port: 端口
-
 baseUri: 基础 URL
 
 
@@ -47,9 +43,16 @@ baseUri: 基础 URL
 
 访问"代理"，其实这个不是代理访问，是直连访问，类库中提供了 API 轮询方式（平均分配），错误处理等机制。
 
-访问方式：
+访问原型：
 
     invoke: function (httpMethod, serviceName, methodUri, parameters, callback)
 
     // yield 方式访问
     invokeCo: function (httpMethod, serviceName, methodUri, parameters)
+
+示例代码：
+
+    cloudeer.invoke('POST', 'serviceName', '/test', {id: "100"}, function (err, body) {
+        if (err) console.log('from client', err);
+        else console.log(body);
+    });
