@@ -8,8 +8,8 @@
   },
   "keywords": [
     "cluster",
-    "microservice"
+    "microservices"
   ],
-  "author": "Xie Zhengwei <iam@xiezhengwei.com>",
+  "author": "Cloudbeer <cloudbeer@gmail.com>",
   "license": "ISC"
 }

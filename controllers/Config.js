@@ -80,8 +80,10 @@ module.exports = Config = {
         if (!hasThisHost) {
             var xhost = {host: host, port: port, baseUri: baseUri, update: new Date() * 1};
             console.log(`New node is coming. 你丫的赶快启动，10秒后加入列队。 ${name},  ${JSON.stringify(xhost) }`);
+            //这里会接入相同的两个配置，但没关系，下一个轮询会移除一个。
             setTimeout(function () {
                 hosts.push(xhost);
+                cloudeer.configChanged = true;
                 res.end("Ok, client added to the config node.");
             }, 10000);
         } else {
