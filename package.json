@@ -1,6 +1,6 @@
 {
   "name": "cloudeer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "microservices management tools",
   "main": "index.js",
   "scripts": {
