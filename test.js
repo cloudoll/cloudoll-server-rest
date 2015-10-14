@@ -81,10 +81,10 @@ var getUrl = function (url, callback) {
 
 
 //----- Service Test ------
-var service = 'cibn';
+var service = 'beatles.pdm';
 var cloudeer = require('./lib');
 
-var cloudeerHost = "http://10.163.57.110:8801";
+var cloudeerHost = "http://127.0.0.1:8801";
 
 
 cloudeer.loadConfigRemote(cloudeerHost);
@@ -93,6 +93,8 @@ setInterval(function () {
     cloudeer.loadConfigRemote(cloudeerHost);
 }, 10000);
 
+
+
 setTimeout(function () {
     setInterval(function () {
         try {
@@ -100,15 +102,16 @@ setTimeout(function () {
             //    if (err) console.log('from client', err);
             //    //else console.log(body);
             //});
-            cloudeer.invoke('POST', service, '/test', {id: "100"}, function (err, body) {
+            cloudeer.invoke('GET', service, '/product', {id: "100"}, function (err, body) {
                 if (err) console.log('from client', err);
-                else console.log(body);
+                else console.log("from body: ", body);
             });
         } catch (e) {
-            console.trace();
+            console.log(e);
+            //console.trace();
         }
-    }, 800);
+    }, 4000);
 
-}, 100);
+}, 1000);
 
 
