@@ -1,8 +1,8 @@
 {
   "name": "cloudeer",
-  "version": "0.0.2",
-  "description": "microservices management tools",
-  "main": "index.js",
+  "version": "0.0.3",
+  "description": "Microservices Management Tools",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
