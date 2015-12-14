@@ -1,7 +1,19 @@
+var program = require('commander');
+
+program
+    .version('0.0.1')
+    .option('-p, --port [type]', 'Server port')
+    .parse(process.argv);
+    
+
+var port = program.port || 8801;
+
+//--------------------------
+
 var http = require('http');
 var url = require('url');
 var router = require('./router');
-var port = 8801;
+//var port = 8801;
 
 
 var config = require('./controllers/Config');
