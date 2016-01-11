@@ -1,6 +1,6 @@
 {
   "name": "cloudeer",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Microservices Management Tools",
   "main": "./lib/index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   "author": "Cloudbeer <cloudbeer@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "commander": "^2.9.0",
     "request": "^2.67.0"
   }
 }
