@@ -49,7 +49,7 @@ module.exports = router = {
                 }
             });
         } else {
-            res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+            res.writeHead(404, {'Content-Type': 'application/json; charset=utf-8'});
             res.end(JSON.stringify({
                 errno: -404,
                 message: "this api is not found."

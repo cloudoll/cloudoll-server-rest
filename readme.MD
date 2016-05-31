@@ -21,6 +21,8 @@
 cloudeer服务端启动后，可以使用 /view 查看微服务列表。默认是：http://localhost:8801/view
 
 
+### 注册服务
+
 微服务启动时，需要调用注册接口, 发起心跳访问，建议心跳间隔不要超过 9 秒。
 
 GET /register
@@ -36,6 +38,25 @@ baseUri: 基础 URL
 sign: 签名，由于安全问题，实际生产环境下，需校验此签名
 
 超过10秒未监测到心跳的微服务，会被调度器从列队中剔除。
+
+### 注册方法
+
+POST /register/methods
+
+需要 POST 一个 json 数据到此 url，结构如d   fda
+
+```
+{
+  service: "goods",
+  methods: [
+    {url: "/admin/1", name: '管理A', method: "POST", open: true},
+    {url: "/admin/2", name: '管理A', method: "GET"},
+    {url: "/admin/c", name: '管理A', method: "GET"},
+    {url: "/admin/d", name: '管理A', method: "GET"},
+    {url: "/admin/e", name: '管理A', method: "POST", open: true}
+  ]
+};
+```
 
 
 ## 消费端工具
