@@ -17,9 +17,14 @@
 
 启动后，等待微服务的注册接入。
 
+同时服务器还会接受微服务的方法注册，目前注册方法并没有什么卵用。未来会加入权限集成验证。
 
-cloudeer服务端启动后，可以使用 /view 查看微服务列表。默认是：http://localhost:8801/view
 
+cloudeer服务端启动后，
+
+使用 /view 查看微服务列表。默认是：http://localhost:8801/view
+
+使用 /methods 查看方法列表。
 
 ### 注册服务
 
@@ -43,7 +48,7 @@ sign: 签名，由于安全问题，实际生产环境下，需校验此签名
 
 POST /register/methods
 
-需要 POST 一个 json 数据到此 url，结构如d   fda
+需要 POST 一个 json 数据到此 url，结构如下：
 
 ```
 {
