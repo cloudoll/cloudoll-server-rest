@@ -64,29 +64,55 @@ var getUrl = function (url, callback) {
 };
 
 
-var testData = {
-  service: "goods",
-  methods: [
-    {url: "/admin/1", name: '管理A', method: "POST", open: true},
-    {url: "/admin/2", name: '管理A', method: "GET"},
-    {url: "/admin/c", name: '管理A', method: "GET"},
-    {url: "/admin/d", name: '管理A', method: "GET"},
-    {url: "/admin/e", name: '管理A', method: "POST", open: true}
-  ]
-};
 
-var testData2 = {
-  service: "goods2",
-  methods: [
-    {url: "/admin/accc", name: '管理A', method: "POST", open: true},
-    {url: "/admin/bdddd", name: '管理A', method: "GET"},
-  ]
-};
+var cloudeer = require('./lib/index');
 
-var request = require('request');
-request.post({url: 'http://127.0.0.1:8801/register/methods', json:testData}, function (error, response, body) {
-  console.log(body);
-});
+
+// //----- Service Test ------
+// var service = 'beatles.pdm';
+// var cloudeer = require('./lib');
+//
+var cloudeerHost = "http://127.0.0.1:8801";
+
+
+cloudeer.loadConfigRemote(cloudeerHost);
+
+// setInterval(function () {
+//     cloudeer.loadConfigRemote(cloudeerHost);
+// }, 10000);
+//
+//
+
+setTimeout(function () {
+  console.log(cloudeer.config);
+  cloudeer.invoke("GET", "cloudarling", "/admin/services", {}, function (err, data) {
+    console.log(err, data);
+  });
+}, 100);
+
+// var testData = {
+//   service: "goods",
+//   methods: [
+//     {url: "/admin/1", name: '管理A', method: "POST", open: true},
+//     {url: "/admin/2", name: '管理A', method: "GET"},
+//     {url: "/admin/c", name: '管理A', method: "GET"},
+//     {url: "/admin/d", name: '管理A', method: "GET"},
+//     {url: "/admin/e", name: '管理A', method: "POST", open: true}
+//   ]
+// };
+//
+// var testData2 = {
+//   service: "goods2",
+//   methods: [
+//     {url: "/admin/accc", name: '管理A', method: "POST", open: true},
+//     {url: "/admin/bdddd", name: '管理A', method: "GET"},
+//   ]
+// };
+//
+// var request = require('request');
+// request.post({url: 'http://127.0.0.1:8801/register/methods', json:testData}, function (error, response, body) {
+//   console.log(body);
+// });
 
 // var x = [1, 2, 3, 4];
 //
@@ -124,20 +150,7 @@ request.post({url: 'http://127.0.0.1:8801/register/methods', json:testData}, fun
 //}, 100);
 
 
-// //----- Service Test ------
-// var service = 'beatles.pdm';
-// var cloudeer = require('./lib');
-//
-// var cloudeerHost = "http://127.0.0.1:8801";
-//
-//
-// cloudeer.loadConfigRemote(cloudeerHost);
-//
-// setInterval(function () {
-//     cloudeer.loadConfigRemote(cloudeerHost);
-// }, 10000);
-//
-//
+
 //
 // setTimeout(function () {
 //     setInterval(function () {
