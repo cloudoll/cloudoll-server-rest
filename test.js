@@ -64,7 +64,6 @@ var getUrl = function (url, callback) {
 };
 
 
-
 var cloudeer = require('./lib/index');
 
 
@@ -83,12 +82,12 @@ cloudeer.loadConfigRemote(cloudeerHost);
 //
 //
 
-setTimeout(function () {
-  console.log(cloudeer.config);
-  cloudeer.invoke("GET", "cloudarling", "/admin/services", {}, function (err, data) {
-    console.log(err, data);
-  });
-}, 100);
+// setTimeout(function () {
+//   console.log(cloudeer.config);
+//   cloudeer.invoke("GET", "cloudarling", "/admin/services", {}, function (err, data) {
+//     console.log(err, data);
+//   });
+// }, 100);
 
 // var testData = {
 //   service: "goods",
@@ -150,7 +149,6 @@ setTimeout(function () {
 //}, 100);
 
 
-
 //
 // setTimeout(function () {
 //     setInterval(function () {
@@ -172,3 +170,10 @@ setTimeout(function () {
 // }, 1000);
 
 
+process.env.YYY = "i have a big";
+
+console.log(process.env.ZSH);
+
+setTimeout(function () {
+  console.log(100);
+}, 5000);

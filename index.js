@@ -28,11 +28,6 @@ var app = http.createServer(function (req, res) {
     return;
   }
 
-
-  //router.res = res;
-  //router.req = req;
-
-  //router.get("/load", config.load);
   router.get("/load-config", config.view);
   router.get("/view", config.view);
   router.post("/edit-cluster", config.editCluster);
@@ -40,8 +35,6 @@ var app = http.createServer(function (req, res) {
   router.post('/register/methods', config.registerMethods);
   router.get("/methods", config.viewMethods);
 
-  var xr = require('./routers');
-  router.post('/h2', xr.h2);
 
 
   router.execute(req, res);
