@@ -87,9 +87,9 @@ module.exports = Config = {
       share.log(`New node is coming: ${name} - ${xhost.host}:${xhost.port}`);
       hosts.push(xhost);
       cloudeer.configChanged = true;
-      res.end("Ok, client added to the config node.");
+      res.end(tools.webok("Ok, client added to the config node."));
     } else {
-      res.end("Ok, client updated.");
+      res.end(tools.webok("Ok, client updated."));
     }
 
     //req.on("close", function () {
@@ -125,7 +125,7 @@ module.exports = Config = {
     // if (thisGroup && thisGroup.length > 0) {
     //   thisGroup = thisGroups[0];
     // }
-    console.log(whichOne);
+    // console.log(whichOne);
     if (whichOne >= 0) {
       cloudeer.methods.splice(whichOne, 1);
     }
