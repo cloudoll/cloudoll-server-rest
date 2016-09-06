@@ -36,7 +36,6 @@ var app = http.createServer(function (req, res) {
   router.get("/methods", config.viewMethods);
 
 
-
   router.execute(req, res);
 
 }).listen(port, "0.0.0.0");
@@ -48,6 +47,8 @@ cloudeer.serviceDumpConfig();
 cloudeer.serviceUpgradeNode();
 cloudeer.serviceDumpMethods();
 
-console.log(`Service started @ ${port}`);
+console.log("HTTP 服务已经启动，简听端口：", port);
+
+require('./lib/socket_server');
 
 
