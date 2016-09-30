@@ -40,15 +40,11 @@ var app = http.createServer(function (req, res) {
 
 }).listen(port, "0.0.0.0");
 
-
+console.log("正在监听端口：", port);
 cloudeer.loadConfig();
 cloudeer.loadMethods();
 cloudeer.serviceDumpConfig();
 cloudeer.serviceUpgradeNode();
 cloudeer.serviceDumpMethods();
-
-console.log("HTTP 服务已经启动，简听端口：", port);
-
-require('./lib/socket_server');
 
 
