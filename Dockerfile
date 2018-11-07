@@ -13,6 +13,6 @@ RUN npm install
 ENTRYPOINT [ "nohup", "node", "index.js", "&>/logs/start.log&" ]
 
 
-# docker build -t cloudoll-server-rest:0.0.1 .
+# docker build -t cloudoll-server-rest:0.1.7 .
 # docker run -i -t --rm cloudoll-server-rest:0.0.1 /bin/bash
-# docker run -p 8801:8801 -d --name cloudoll-server-rest cloudoll-server-rest:0.0.1
+# docker run -p 8801:8801 -d --name cloudoll-server-rest cloudoll-server-rest:0.1.7
