@@ -28,7 +28,7 @@ module.exports = router = {
                 if (/^[-\w]+(=[^&]*)?(&[-\w]+(=[^&]*)?)*$/.test(body)) {
                     req.body = querystring.parse(body);
                 } else if (/[^,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t]/.test(body)) {
-                    console.log("come here", body);
+                    // console.log("come here", body);
                     req.body = JSON.parse(body);
                 } else {
                     req.body = body;

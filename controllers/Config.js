@@ -104,7 +104,7 @@ module.exports = Config = {
   //上传方法
   registerMethods: function (req, res) {
     var form = req.body;
-    console.log(form);
+    // console.log(form);
     if (!form.hasOwnProperty('service')) {
       res.end(tools.error(-400, "JSON 数据中需要参数 service。"));
       return;
