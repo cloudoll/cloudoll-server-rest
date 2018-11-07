@@ -1,0 +1,6 @@
+logs
+node_modules
+test.js
+test.socket.js
+.dockerignore
+Dockerfile
